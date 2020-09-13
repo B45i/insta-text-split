@@ -20,7 +20,7 @@ export class TextService {
 
         if ((frag + w).length > 2150) {
           this.parts.push(frag);
-          partial = '';
+          partial = w;
         } else {
           partial = `${partial} ${w}`;
         }

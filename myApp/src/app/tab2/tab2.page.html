@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="end" *ngIf="textService.parts.length || true">
-      <ion-icon [name]="isReverse ? 'arrow-down-circle-outline' : 'arrow-up-circle-outline'"
+      <ion-icon size="large" [name]="isReverse ? 'arrow-down-circle-outline' : 'arrow-up-circle-outline'"
         (click)="isReverse = !isReverse">
       </ion-icon>
     </ion-buttons>
