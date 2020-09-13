@@ -13,11 +13,10 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let part of (isReverse ? (textService.parts.reverse()) : (textService.parts))">
-      <ion-textarea class="native-textarea sc-ion-textarea-md" readonly (click)="onClick($event)" style="margin: 20px auto;"
-        [value]="part">
+      <ion-textarea class="native-textarea sc-ion-textarea-md" readonly (click)="onClick($event)"
+        style="margin: 20px auto;" [value]="part">
       </ion-textarea>
     </ion-item>
     <hr>
   </ion-list>
 </ion-content>
-<!-- style="width: 100%; color: black" -->
