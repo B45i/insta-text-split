@@ -21,7 +21,7 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [disabled]="!(title && content)" (click)="textService.genarateText(title, content, footer)">
+    <ion-fab-button [disabled]="!(title && content)" (click)="onClick()">
       <ion-icon name="arrow-forward-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>

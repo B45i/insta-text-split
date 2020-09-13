@@ -8,7 +8,7 @@ export class TextService {
 
   parts: Array<string> = [];
 
-  genarateText(title: string, content: string, footer: string) {
+  genarateText(title: string, content: string, footer: string = '') {
     let partial = '';
     content
       .trim()
@@ -17,6 +17,7 @@ export class TextService {
         const frag = `${title} - PART: ${
           this.parts.length + 1
         }\n\n${partial}\n\n${footer}`;
+
         if ((frag + w).length > 2150) {
           this.parts.push(frag);
           partial = '';
