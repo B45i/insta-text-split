@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-buttons slot="end" *ngIf="textService.parts.length || true">
+      <ion-icon [name]="isReverse ? 'arrow-up-circle-outline' : 'arrow-down-circle-outline'"
+        (click)="isReverse = !isReverse">
+      </ion-icon>
+    </ion-buttons>
+
+    <ion-title>{{ textService.parts.length ? 'Tap to copy' : 'Fill data to generate list' }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let part of (isReverse ? (textService.parts.reverse()) : (textService.parts))">
+      <ion-textarea class="native-textarea sc-ion-textarea-md" readonly (click)="onClick($event)" style="margin: 20px auto;"
+        [value]="part">
+      </ion-textarea>
+    </ion-item>
+    <hr>
+  </ion-list>
 </ion-content>
+<!-- style="width: 100%; color: black" -->

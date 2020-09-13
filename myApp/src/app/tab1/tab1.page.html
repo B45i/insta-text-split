@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Add Data
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+  <ion-item>
+    <ion-input placeholder="Enter Title" [(ngModel)]="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea placeholder="Enter Content" [(ngModel)]="content"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea placeholder="Enter Footer" [(ngModel)]="footer"></ion-textarea>
+  </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [disabled]="!(title && content)" (click)="textService.genarateText(title, content, footer)">
+      <ion-icon name="arrow-forward-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
