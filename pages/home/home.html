@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<ion-item>
+		<ion-input placeholder="Enter Title" [(ngModel)]="title"></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-textarea placeholder="Enter Content" [(ngModel)]="content"></ion-textarea>
+	</ion-item>
+	<ion-item>
+		<ion-textarea placeholder="Enter Footer" [(ngModel)]="footer"></ion-textarea>
+	</ion-item>
+
+	<button ion-button round [disabled]="!(title && content)"
+  (click)="textService.genarateText(title, content, footer)" >Generate</button>
+
+</ion-content>
