@@ -10,6 +10,7 @@ export class TextService {
 
   genarateText(title: string, content: string, footer: string = '') {
     let partial = '';
+    this.parts = [];
     content
       .trim()
       .split(' ')
